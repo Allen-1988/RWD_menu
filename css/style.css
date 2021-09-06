@@ -1,0 +1,160 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+/*reset end*/
+body{
+	background: orange;
+}
+.warp{
+	max-width: 960px;
+	margin: 0 auto;	
+	
+}
+/*header段落*/
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	background: burlywood;
+
+}
+.header .logo{
+	width: 70px;
+	height: 70px;	
+	margin: 15px;
+}
+.header ul{	
+	display: flex;
+	justify-content: flex-end;	
+	
+}
+.header ul a{
+	font-size: 20px;
+	text-decoration: none;
+	display: block;		
+	padding: 10px;
+}
+/*banner段落*/
+.banner{
+	height: 420px;
+	background: #000;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url(https://github.com/Allen-9527/RWD-Practice/blob/main/image/big.png?raw=true);
+}
+/*content段落*/
+.content{
+	padding: 1em;
+	line-height: 1.8;
+  }
+  .content p{
+	margin-bottom: 1em;
+  }
+/*在PC上隱藏漢堡選單*/
+.showmenu{
+	display: none;
+  }
+
+@media(max-width:767px){
+	.header{
+		position: fixed;
+		width: 100%;
+	}	
+	.menu{
+		/*隱藏選單開始*/
+		max-height: 0px;
+		overflow: hidden;
+		/*隱藏選單結束*/
+		transition: max-height 2.3s;
+		margin-top: 1px;
+		/*絕對定位疊在網頁上*/
+		position: absolute;
+		z-index: 10;
+		/*header 80px+1px boder 線條*/
+		top: 99px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+	}
+	.showmenu{
+		display: block;
+		text-decoration: none;
+		font-size: 20px;
+		color: #fff;
+    	border: 1px solid black;
+		padding: 40px;
+		background: #ebac26;
+		
+		
+	}
+    .menu li a {
+        transition: all 0.5s;
+        background: #f3c706;
+		text-align: center;
+		
+      }
+    .menu li a:hover,
+    .showmenu:hover {
+        color: black;
+        }
+    .menu-show .menu {
+        max-height: 500px;
+        }
+    .content{
+        padding:49px 0 0 0;
+        }
+	.banner{
+		background-image: url(https://github.com/Allen-9527/RWD-Practice/blob/main/image/small.png?raw=true);
+	}
+}
