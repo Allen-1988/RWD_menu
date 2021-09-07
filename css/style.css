@@ -107,6 +107,7 @@ body{
   }
 
 @media(max-width:767px){
+	/*header固定位置*/
 	.header{
 		position: fixed;
 		width: 100%;
